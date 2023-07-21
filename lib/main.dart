@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticktok_clone/constants/gaps.dart';
 
 void main() {
   runApp(const TikTokApp());
@@ -14,7 +15,19 @@ class TikTokApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: const Color(0xFFE9435A),
       ),
-      home: Container(),
+      home: Container(
+        child: Row(
+          children: const [
+            Text(
+              "hello",
+            ),
+            Gaps.h20,
+            Text(
+              "hello",
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
