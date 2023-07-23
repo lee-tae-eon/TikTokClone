@@ -36,6 +36,36 @@ class SignUpScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey.shade100,
+        elevation: 3,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: Sizes.size32,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                "Already have an account?",
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: Sizes.size16,
+                ),
+              ),
+              Gaps.h5,
+              Text(
+                "Log in",
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontWeight: FontWeight.w600,
+                  fontSize: Sizes.size16,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
