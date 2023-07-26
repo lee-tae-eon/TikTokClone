@@ -60,12 +60,15 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               Gaps.h5,
-              Text(
-                "Log in",
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontWeight: FontWeight.w600,
-                  fontSize: Sizes.size16,
+              GestureDetector(
+                onTap: () => onLoginTap(context),
+                child: Text(
+                  "Log in",
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: Sizes.size16,
+                  ),
                 ),
               ),
             ],
