@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/screens/sign_up/sign_up_screen.dart';
 
 void main() {
