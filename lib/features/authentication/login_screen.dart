@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
+import 'package:ticktok_clone/features/authentication/common/widgets/auth_button.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -31,6 +32,13 @@ class LoginScreen extends StatelessWidget {
                   color: Colors.black45,
                 ),
                 textAlign: TextAlign.center,
+              ),
+              Gaps.v40,
+              AuthButton(
+                text: "Use phone / email / username",
+              ),
+              AuthButton(
+                text: "Continue with Apple",
               ),
             ],
           ),

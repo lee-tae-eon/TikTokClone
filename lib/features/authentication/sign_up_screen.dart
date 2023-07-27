@@ -40,7 +40,12 @@ class SignUpScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               Gaps.v40,
-              AuthButton(text: "Use phone or email")
+              AuthButton(
+                text: "Use phone or email",
+              ),
+              AuthButton(
+                text: "Continue with Apple",
+              ),
             ],
           ),
         ),

@@ -10,14 +10,25 @@ class AuthButton extends StatelessWidget {
   Widget build(BuildContext context) {
     // * FractionallySizedBox :  box 위젯 픽셀 정렬이 아닌 부모의 크기에 비례해서 크기를 정해주는 위젯
     return FractionallySizedBox(
+      widthFactor: 1,
       child: Container(
+        padding: const EdgeInsets.symmetric(
+          vertical: Sizes.size14,
+        ),
         decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.grey.shade200,
-            width: Sizes.size2,
+            color: Colors.grey.shade300,
+            width: Sizes.size1,
           ),
         ),
-        child: Text(text),
+        child: Text(
+          text,
+          style: const TextStyle(
+            fontSize: Sizes.size16,
+            fontWeight: FontWeight.w600,
+          ),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
