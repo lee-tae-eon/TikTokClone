@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
-import 'package:ticktok_clone/screens/login/login_screen.dart';
+import 'package:ticktok_clone/features/authentication/login_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
