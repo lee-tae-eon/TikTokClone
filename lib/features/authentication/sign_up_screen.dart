@@ -47,6 +47,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 text: "Use phone or email",
               ),
+              Gaps.v16,
               AuthButton(
                 icon: FaIcon(
                   FontAwesomeIcons.apple,

@@ -16,6 +16,7 @@ class AuthButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(
           vertical: Sizes.size14,
+          horizontal: Sizes.size12,
         ),
         decoration: BoxDecoration(
           border: Border.all(
@@ -23,16 +24,22 @@ class AuthButton extends StatelessWidget {
             width: Sizes.size1,
           ),
         ),
-        child: Row(
+        child: Stack(
+          alignment: Alignment.center,
           children: [
-            icon,
-            Text(
-              text,
-              style: const TextStyle(
-                fontSize: Sizes.size16,
-                fontWeight: FontWeight.w600,
+            Align(
+              alignment: Alignment.centerLeft,
+              child: icon,
+            ),
+            Expanded(
+              child: Text(
+                text,
+                style: const TextStyle(
+                  fontSize: Sizes.size16,
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
             ),
           ],
         ),
