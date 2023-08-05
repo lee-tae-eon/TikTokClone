@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
-import 'package:ticktok_clone/features/authentication/common/widgets/auth_button.dart';
+import 'package:ticktok_clone/features/authentication/widgets/auth_button.dart';
 import 'package:ticktok_clone/features/authentication/sign_up_screen.dart';
 
 class LoginScreen extends StatelessWidget {
