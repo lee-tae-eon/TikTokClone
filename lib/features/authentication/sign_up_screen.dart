@@ -9,17 +9,17 @@ import 'package:ticktok_clone/features/authentication/login_screen.dart';
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
-  void onLoginTap(BuildContext context) {
+  void _onLoginTap(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => const LoginScreen()));
   }
 
-  void linkToEmailScreen(BuildContext context) {
+  void _linkToEmailScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => const EmailScreen()));
   }
 
-  void linkToUserNamScreen(BuildContext context) {
+  void _linkToUserNamScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => const EmailScreen()));
   }
@@ -57,7 +57,7 @@ class SignUpScreen extends StatelessWidget {
                   FontAwesomeIcons.user,
                 ),
                 text: "Use email & password",
-                linkToFunction: linkToEmailScreen,
+                linkToFunction: _linkToEmailScreen,
               ),
               Gaps.v16,
               AuthButton(
@@ -65,7 +65,7 @@ class SignUpScreen extends StatelessWidget {
                   FontAwesomeIcons.apple,
                 ),
                 text: "Continue with Apple",
-                linkToFunction: linkToUserNamScreen,
+                linkToFunction: _linkToUserNamScreen,
               ),
             ],
           ),
@@ -90,7 +90,7 @@ class SignUpScreen extends StatelessWidget {
               ),
               Gaps.h5,
               GestureDetector(
-                onTap: () => onLoginTap(context),
+                onTap: () => _onLoginTap(context),
                 child: Text(
                   "Log in",
                   style: TextStyle(
