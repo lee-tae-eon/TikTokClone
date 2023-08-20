@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
+import 'package:ticktok_clone/features/authentication/email_screen.dart';
 import 'package:ticktok_clone/features/authentication/widgets/auth_button.dart';
 import 'package:ticktok_clone/features/authentication/login_screen.dart';
 
@@ -13,6 +14,16 @@ class SignUpScreen extends StatelessWidget {
         .push(MaterialPageRoute(builder: (context) => const LoginScreen()));
   }
 
+  void linkToEmailScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const EmailScreen()));
+  }
+
+  void linkToUserNamScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const EmailScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +33,9 @@ class SignUpScreen extends StatelessWidget {
             horizontal: Sizes.size40,
           ),
           child: Column(
-            children: const [
+            children: [
               Gaps.v80,
-              Text(
+              const Text(
                 "Sign up for TikTok",
                 style: TextStyle(
                   fontSize: Sizes.size24,
@@ -32,7 +43,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               Gaps.v20,
-              Text(
+              const Text(
                 "Create a profile, follow other accounts, make your own videos, and more.",
                 style: TextStyle(
                   fontSize: Sizes.size16,
@@ -42,17 +53,19 @@ class SignUpScreen extends StatelessWidget {
               ),
               Gaps.v40,
               AuthButton(
-                icon: FaIcon(
+                icon: const FaIcon(
                   FontAwesomeIcons.user,
                 ),
                 text: "Use email & password",
+                linkToFunction: linkToEmailScreen,
               ),
               Gaps.v16,
               AuthButton(
-                icon: FaIcon(
+                icon: const FaIcon(
                   FontAwesomeIcons.apple,
                 ),
                 text: "Continue with Apple",
+                linkToFunction: linkToUserNamScreen,
               ),
             ],
           ),

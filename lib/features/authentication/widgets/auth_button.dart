@@ -5,40 +5,48 @@ import 'package:ticktok_clone/constants/sizes.dart';
 class AuthButton extends StatelessWidget {
   final String text;
   final FaIcon icon;
+  final void Function(BuildContext)? linkToFunction;
 
-  const AuthButton({super.key, required this.text, required this.icon});
+  const AuthButton(
+      {super.key,
+      required this.text,
+      required this.icon,
+      required this.linkToFunction});
 
   @override
   Widget build(BuildContext context) {
     // * FractionallySizedBox :  box 위젯 픽셀 정렬이 아닌 부모의 크기에 비례해서 크기를 정해주는 위젯
-    return FractionallySizedBox(
-      widthFactor: 1,
-      child: Container(
-        padding: const EdgeInsets.all(
-          Sizes.size14,
-        ),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.grey.shade300,
-            width: Sizes.size1,
+    return GestureDetector(
+      onTap: () => linkToFunction!(context),
+      child: FractionallySizedBox(
+        widthFactor: 1,
+        child: Container(
+          padding: const EdgeInsets.all(
+            Sizes.size14,
           ),
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: icon,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.grey.shade300,
+              width: Sizes.size1,
             ),
-            Text(
-              text,
-              style: const TextStyle(
-                fontSize: Sizes.size16,
-                fontWeight: FontWeight.w600,
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: icon,
               ),
-              textAlign: TextAlign.center,
-            ),
-          ],
+              Text(
+                text,
+                style: const TextStyle(
+                  fontSize: Sizes.size16,
+                  fontWeight: FontWeight.w600,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
         ),
       ),
     );
