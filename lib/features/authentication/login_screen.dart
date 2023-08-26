@@ -57,7 +57,7 @@ class LoginScreen extends StatelessWidget {
                   FontAwesomeIcons.user,
                 ),
                 text: "Use email & password",
-                linkToFunction: _linkToUserNamScreen,
+                linkToFunction: _linkToEmailScreen,
               ),
               Gaps.v16,
               AuthButton(
