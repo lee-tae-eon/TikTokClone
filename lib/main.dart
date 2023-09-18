@@ -21,7 +21,7 @@ class TikTokApp extends StatelessWidget {
               backgroundColor: Colors.white,
               elevation: 0,
               titleTextStyle: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: Sizes.size16 + Sizes.size2,
                 fontWeight: FontWeight.w600,
               ),
