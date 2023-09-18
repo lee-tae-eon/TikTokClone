@@ -10,11 +10,16 @@ class EmailScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "Sign up",
-          style: TextStyle(
-              fontSize: Sizes.size16 + Sizes.size2,
-              fontWeight: FontWeight.w600),
         ),
       ),
+      body: Column(children: const [
+        Text(
+          "CREATE USERNAME",
+          style: TextStyle(
+            fontSize: Sizes.size20,
+          ),
+        )
+      ]),
     );
   }
 }
