@@ -12,14 +12,26 @@ class EmailScreen extends StatelessWidget {
           "Sign up",
         ),
       ),
-      body: Column(children: const [
-        Text(
-          "CREATE USERNAME",
-          style: TextStyle(
-            fontSize: Sizes.size20,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text(
+            "CREATE USERNAME",
+            style: TextStyle(
+              fontSize: Sizes.size20,
+              fontWeight: FontWeight.w600,
+            ),
           ),
-        )
-      ]),
+          Text(
+            "You can always change this later.",
+            style: TextStyle(
+              fontSize: Sizes.size16,
+              fontWeight: FontWeight.w400,
+              color: Colors.black54,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
