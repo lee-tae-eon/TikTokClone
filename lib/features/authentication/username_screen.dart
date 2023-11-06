@@ -82,6 +82,7 @@ class _UsernameScreenState extends State<UsernameScreen> {
                   vertical: Sizes.size16,
                 ),
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Sizes.size4),
                   color: _usernameState.isNotEmpty
                       ? Theme.of(context).primaryColor
                       : Theme.of(context).disabledColor,
