@@ -19,9 +19,9 @@ class UsernameScreen extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Gaps.v40,
-            Text(
+            const Text(
               "Create username",
               style: TextStyle(
                 fontSize: Sizes.size20,
@@ -29,13 +29,20 @@ class UsernameScreen extends StatelessWidget {
               ),
             ),
             Gaps.v8,
-            Text(
+            const Text(
               "You can always change this later.",
               style: TextStyle(
                 fontSize: Sizes.size16,
                 fontWeight: FontWeight.w400,
                 color: Colors.black54,
               ),
+            ),
+            Gaps.h16,
+            TextField(
+              decoration: const InputDecoration(
+                hintText: "Username",
+              ),
+              cursorColor: Theme.of(context).primaryColor,
             )
           ],
         ),
