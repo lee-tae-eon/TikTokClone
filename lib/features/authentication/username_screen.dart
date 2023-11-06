@@ -37,10 +37,20 @@ class UsernameScreen extends StatelessWidget {
                 color: Colors.black54,
               ),
             ),
-            Gaps.h16,
+            Gaps.v16,
             TextField(
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 hintText: "Username",
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.shade400,
+                  ),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey.shade400,
+                  ),
+                ),
               ),
               cursorColor: Theme.of(context).primaryColor,
             )
