@@ -13,6 +13,14 @@ class _UsernameScreenState extends State<UsernameScreen> {
   final TextEditingController _usernameController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    _usernameController.addListener(() {
+      print(_usernameController.text);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -46,6 +54,7 @@ class _UsernameScreenState extends State<UsernameScreen> {
             ),
             Gaps.v16,
             TextField(
+              controller: _usernameController,
               decoration: InputDecoration(
                 hintText: "Username",
                 enabledBorder: UnderlineInputBorder(
