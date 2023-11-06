@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
 
-class UsernameScreen extends StatelessWidget {
+class UsernameScreen extends StatefulWidget {
   const UsernameScreen({super.key});
+
+  @override
+  State<UsernameScreen> createState() => _UsernameScreenState();
+}
+
+class _UsernameScreenState extends State<UsernameScreen> {
+  final TextEditingController _usernameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
