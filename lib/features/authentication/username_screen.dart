@@ -53,7 +53,27 @@ class UsernameScreen extends StatelessWidget {
                 ),
               ),
               cursorColor: Theme.of(context).primaryColor,
-            )
+            ),
+            Gaps.v16,
+            FractionallySizedBox(
+              widthFactor: 1,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: Sizes.size16,
+                ),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                ),
+                child: const Text(
+                  "Next",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
