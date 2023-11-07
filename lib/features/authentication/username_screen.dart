@@ -11,8 +11,17 @@ class UsernameScreen extends StatefulWidget {
 }
 
 class _UsernameScreenState extends State<UsernameScreen> {
+  // * 이벤트 리스너를 추가하기 때문에 dispose를 해야한다.
+  // * dispose 를 하지 않으면 memory 부족으로 crash 날 확률이 잇다.
   final TextEditingController _usernameController = TextEditingController();
   String _usernameState = "";
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    // * 모든 이벤트를 dispose하고  super 를 dispose한다
+    super.dispose();
+  }
 
   @override
   void initState() {
