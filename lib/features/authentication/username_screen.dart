@@ -18,6 +18,7 @@ class _UsernameScreenState extends State<UsernameScreen> {
 
   @override
   void dispose() {
+    print("9:57");
     _usernameController.dispose();
     // * 모든 이벤트를 dispose하고  super 를 dispose한다
     super.dispose();
