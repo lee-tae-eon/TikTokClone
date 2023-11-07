@@ -77,7 +77,6 @@ class _UsernameScreenState extends State<UsernameScreen> {
             FractionallySizedBox(
               widthFactor: 1,
               child: AnimatedContainer(
-                duration: const Duration(milliseconds: 300),
                 padding: const EdgeInsets.symmetric(
                   vertical: Sizes.size16,
                 ),
@@ -87,14 +86,20 @@ class _UsernameScreenState extends State<UsernameScreen> {
                       ? Theme.of(context).primaryColor
                       : Colors.grey.shade300,
                 ),
-                child: Text(
-                  "Next",
-                  textAlign: TextAlign.center,
+                duration: const Duration(milliseconds: 300),
+                // AnimatedDefaultTextStyle => 텍스트가 바뀔 때 애니메이션 효과
+                // style 을 줘야함
+                child: AnimatedDefaultTextStyle(
+                  duration: const Duration(milliseconds: 300),
                   style: TextStyle(
                     color: _usernameState.isNotEmpty
                         ? Colors.white
                         : Colors.grey.shade400,
                     fontWeight: FontWeight.w600,
+                  ),
+                  child: const Text(
+                    "Next",
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
