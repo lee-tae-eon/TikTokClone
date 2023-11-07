@@ -85,13 +85,15 @@ class _UsernameScreenState extends State<UsernameScreen> {
                   borderRadius: BorderRadius.circular(Sizes.size4),
                   color: _usernameState.isNotEmpty
                       ? Theme.of(context).primaryColor
-                      : Theme.of(context).disabledColor,
+                      : Colors.grey.shade300,
                 ),
-                child: const Text(
+                child: Text(
                   "Next",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: _usernameState.isNotEmpty
+                        ? Colors.white
+                        : Colors.grey.shade400,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
