@@ -34,6 +34,8 @@ class _UsernameScreenState extends State<UsernameScreen> {
     });
   }
 
+//* StatefulWidget 의 state안에 있으면 BuilderContext를 받을 필요가 없다.
+// * 어디서든 context를 사용할 수 있다.
   void onNextTap() {
     if (_usernameController.text.isEmpty) return;
     Navigator.of(context).push(
