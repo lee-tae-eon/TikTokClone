@@ -3,22 +3,22 @@ import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
 import 'package:ticktok_clone/features/authentication/widgets/form_button.dart';
 
-class UsernameScreen extends StatefulWidget {
-  const UsernameScreen({super.key});
+class EmailScreen extends StatefulWidget {
+  const EmailScreen({super.key});
 
   @override
-  State<UsernameScreen> createState() => _UsernameScreenState();
+  State<EmailScreen> createState() => _EmailScreenState();
 }
 
-class _UsernameScreenState extends State<UsernameScreen> {
+class _EmailScreenState extends State<EmailScreen> {
   // * 이벤트 리스너를 추가하기 때문에 dispose를 해야한다.
   // * dispose 를 하지 않으면 memory 부족으로 crash 날 확률이 잇다.
-  final TextEditingController _usernameController = TextEditingController();
-  String _usernameState = "";
+  final TextEditingController _emailStateController = TextEditingController();
+  String _emailState = "";
 
   @override
   void dispose() {
-    _usernameController.dispose();
+    _emailStateController.dispose();
     // * 모든 이벤트를 dispose하고  super 를 dispose한다
     super.dispose();
   }
@@ -26,9 +26,9 @@ class _UsernameScreenState extends State<UsernameScreen> {
   @override
   void initState() {
     super.initState();
-    _usernameController.addListener(() {
+    _emailStateController.addListener(() {
       setState(() {
-        _usernameState = _usernameController.text;
+        _emailState = _emailStateController.text;
       });
     });
   }
@@ -50,26 +50,17 @@ class _UsernameScreenState extends State<UsernameScreen> {
           children: [
             Gaps.v40,
             const Text(
-              "Create username",
+              "What is your email?",
               style: TextStyle(
                 fontSize: Sizes.size20,
                 fontWeight: FontWeight.w600,
               ),
             ),
-            Gaps.v8,
-            const Text(
-              "You can always change this later.",
-              style: TextStyle(
-                fontSize: Sizes.size16,
-                fontWeight: FontWeight.w400,
-                color: Colors.black54,
-              ),
-            ),
             Gaps.v16,
             TextField(
-              controller: _usernameController,
+              controller: _emailStateController,
               decoration: InputDecoration(
-                hintText: "Username",
+                hintText: "Email",
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.grey.shade400,
@@ -84,7 +75,7 @@ class _UsernameScreenState extends State<UsernameScreen> {
               cursorColor: Theme.of(context).primaryColor,
             ),
             Gaps.v16,
-            FormButton(disabled: _usernameState.isEmpty),
+            FormButton(disabled: _emailState.isEmpty),
           ],
         ),
       ),
