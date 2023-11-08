@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
+import 'package:ticktok_clone/features/authentication/emal_screen.dart';
 import 'package:ticktok_clone/features/authentication/widgets/form_button.dart';
 
 class UsernameScreen extends StatefulWidget {
@@ -31,6 +32,14 @@ class _UsernameScreenState extends State<UsernameScreen> {
         _usernameState = _usernameController.text;
       });
     });
+  }
+
+  void onNextTap() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const EmailScreen(),
+      ),
+    );
   }
 
   @override
@@ -84,7 +93,13 @@ class _UsernameScreenState extends State<UsernameScreen> {
               cursorColor: Theme.of(context).primaryColor,
             ),
             Gaps.v16,
-            FormButton(disabled: _usernameState.isEmpty),
+            // TextButton 이라는 widget이 존재한다
+            GestureDetector(
+              onTap: onNextTap,
+              child: FormButton(
+                disabled: _usernameState.isEmpty,
+              ),
+            ),
           ],
         ),
       ),
