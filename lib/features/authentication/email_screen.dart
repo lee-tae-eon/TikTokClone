@@ -14,7 +14,7 @@ class _EmailScreenState extends State<EmailScreen> {
   // * 이벤트 리스너를 추가하기 때문에 dispose를 해야한다.
   // * dispose 를 하지 않으면 memory 부족으로 crash 날 확률이 잇다.
   final TextEditingController _emailStateController = TextEditingController();
-  String _emailState = "";
+  String _email = "";
 
   @override
   void dispose() {
@@ -23,12 +23,17 @@ class _EmailScreenState extends State<EmailScreen> {
     super.dispose();
   }
 
+  String? _isEmailValid() {
+    if (_email.isEmpty) return null;
+    return null;
+  }
+
   @override
   void initState() {
     super.initState();
     _emailStateController.addListener(() {
       setState(() {
-        _emailState = _emailStateController.text;
+        _email = _emailStateController.text;
       });
     });
   }
@@ -61,6 +66,7 @@ class _EmailScreenState extends State<EmailScreen> {
               controller: _emailStateController,
               decoration: InputDecoration(
                 hintText: "Email",
+                errorText: _isEmailValid(),
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.grey.shade400,
@@ -75,7 +81,7 @@ class _EmailScreenState extends State<EmailScreen> {
               cursorColor: Theme.of(context).primaryColor,
             ),
             Gaps.v16,
-            FormButton(disabled: _emailState.isEmpty),
+            FormButton(disabled: _email.isEmpty),
           ],
         ),
       ),
