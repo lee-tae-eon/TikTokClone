@@ -88,6 +88,7 @@ class _EmailScreenState extends State<EmailScreen> {
               TextField(
                 controller: _emailStateController,
                 keyboardType: TextInputType.emailAddress,
+                onEditingComplete: _onSubmit,
                 autocorrect: false,
                 decoration: InputDecoration(
                   hintText: "Email",
@@ -106,7 +107,10 @@ class _EmailScreenState extends State<EmailScreen> {
                 cursorColor: Theme.of(context).primaryColor,
               ),
               Gaps.v16,
-              FormButton(disabled: _email.isEmpty || _isEmailValid() != null),
+              GestureDetector(
+                  onTap: _onSubmit,
+                  child: FormButton(
+                      disabled: _email.isEmpty || _isEmailValid() != null)),
             ],
           ),
         ),
