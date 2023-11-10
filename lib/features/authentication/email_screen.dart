@@ -87,7 +87,11 @@ class _EmailScreenState extends State<EmailScreen> {
               Gaps.v16,
               TextField(
                 controller: _emailStateController,
+                // * keyboard를 email 타입으로
                 keyboardType: TextInputType.emailAddress,
+                // * onComplete와 onEditingComplete가 있는데
+                // * onComplete는 context(text) 를 인자로 받는다 이미 알고 있기 때문에
+                // * onEditingComplete를 쓴다.
                 onEditingComplete: _onSubmit,
                 autocorrect: false,
                 decoration: InputDecoration(
