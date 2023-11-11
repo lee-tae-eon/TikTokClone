@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
 import 'package:ticktok_clone/features/authentication/widgets/form_button.dart';
@@ -91,8 +92,16 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 onEditingComplete: _onSubmit,
                 autocorrect: false,
                 decoration: InputDecoration(
-                  prefixIcon: const Icon(Icons.ac_unit),
-                  suffixIcon: const Icon(Icons.access_alarm),
+                  suffix: Row(
+                    children: const [
+                      FaIcon(
+                        FontAwesomeIcons.circleXmark,
+                      ),
+                      FaIcon(
+                        FontAwesomeIcons.eye,
+                      ),
+                    ],
+                  ),
                   hintText: "Make it strong",
                   errorText: _isPasswordValid(),
                   enabledBorder: UnderlineInputBorder(
