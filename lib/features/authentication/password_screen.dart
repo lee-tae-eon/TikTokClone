@@ -23,7 +23,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
     super.dispose();
   }
 
-  String? _isEmailValid() {
+  String? _isPasswordValid() {
     if (_email.isEmpty) return null;
     final regExp = RegExp(
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
@@ -48,7 +48,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
   }
 
   void _onSubmit() {
-    if (_email.isEmpty || _isEmailValid() != null) return;
+    if (_email.isEmpty || _isPasswordValid() != null) return;
 
     Navigator.push(
       context,
@@ -77,7 +77,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
             children: [
               Gaps.v40,
               const Text(
-                "What is your email?",
+                "Password",
                 style: TextStyle(
                   fontSize: Sizes.size20,
                   fontWeight: FontWeight.w600,
@@ -87,15 +87,14 @@ class _PasswordScreenState extends State<PasswordScreen> {
               TextField(
                 controller: _passwordController,
                 // * keyboard를 email 타입으로
-                keyboardType: TextInputType.emailAddress,
-                // * onComplete와 onEditingComplete가 있는데
-                // * onComplete는 context(text) 를 인자로 받는다 이미 알고 있기 때문에
-                // * onEditingComplete를 쓴다.
+
                 onEditingComplete: _onSubmit,
                 autocorrect: false,
                 decoration: InputDecoration(
-                  hintText: "Email",
-                  errorText: _isEmailValid(),
+                  prefixIcon: const Icon(Icons.ac_unit),
+                  suffixIcon: const Icon(Icons.access_alarm),
+                  hintText: "Make it strong",
+                  errorText: _isPasswordValid(),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.grey.shade400,
@@ -113,7 +112,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
               GestureDetector(
                   onTap: _onSubmit,
                   child: FormButton(
-                      disabled: _email.isEmpty || _isEmailValid() != null)),
+                      disabled: _email.isEmpty || _isPasswordValid() != null)),
             ],
           ),
         ),
