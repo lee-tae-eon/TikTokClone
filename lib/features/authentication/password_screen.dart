@@ -92,7 +92,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
               TextField(
                 controller: _passwordController,
                 // * keyboard를 email 타입으로
-
+                obscureText: true,
                 onEditingComplete: _onSubmit,
                 autocorrect: false,
                 decoration: InputDecoration(
