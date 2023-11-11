@@ -93,12 +93,18 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 autocorrect: false,
                 decoration: InputDecoration(
                   suffix: Row(
-                    children: const [
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
                       FaIcon(
-                        FontAwesomeIcons.circleXmark,
+                        FontAwesomeIcons.solidCircleXmark,
+                        color: Colors.grey.shade500,
+                        size: Sizes.size20,
                       ),
+                      Gaps.h14,
                       FaIcon(
                         FontAwesomeIcons.eye,
+                        color: Colors.grey.shade500,
+                        size: Sizes.size20,
                       ),
                     ],
                   ),
