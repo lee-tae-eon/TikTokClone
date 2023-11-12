@@ -15,8 +15,9 @@ class _PasswordScreenState extends State<PasswordScreen> {
   // * 이벤트 리스너를 추가하기 때문에 dispose를 해야한다.
   // * dispose 를 하지 않으면 memory 부족으로 crash 날 확률이 잇다.
   final TextEditingController _passwordController = TextEditingController();
-  String _email = "";
+  String _password = "";
 
+  final bool _obscureText = true;
   @override
   void dispose() {
     _passwordController.dispose();
@@ -25,10 +26,10 @@ class _PasswordScreenState extends State<PasswordScreen> {
   }
 
   String? _isPasswordValid() {
-    if (_email.isEmpty) return null;
+    if (_password.isEmpty) return null;
     final regExp = RegExp(
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-    if (!regExp.hasMatch(_email)) {
+    if (!regExp.hasMatch(_password)) {
       return "Email not valid";
     }
     return null;
@@ -39,7 +40,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
     super.initState();
     _passwordController.addListener(() {
       setState(() {
-        _email = _passwordController.text;
+        _password = _passwordController.text;
       });
     });
   }
@@ -49,7 +50,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
   }
 
   void _onSubmit() {
-    if (_email.isEmpty || _isPasswordValid() != null) return;
+    if (_password.isEmpty || _isPasswordValid() != null) return;
 
     Navigator.push(
       context,
@@ -91,8 +92,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
               Gaps.v16,
               TextField(
                 controller: _passwordController,
-                // * keyboard를 email 타입으로
-                obscureText: true,
+                obscureText: _obscureText,
                 onEditingComplete: _onSubmit,
                 autocorrect: false,
                 decoration: InputDecoration(
@@ -116,7 +116,6 @@ class _PasswordScreenState extends State<PasswordScreen> {
                     ],
                   ),
                   hintText: "Make it strong",
-                  errorText: _isPasswordValid(),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.grey.shade400,
@@ -134,7 +133,8 @@ class _PasswordScreenState extends State<PasswordScreen> {
               GestureDetector(
                   onTap: _onSubmit,
                   child: FormButton(
-                      disabled: _email.isEmpty || _isPasswordValid() != null)),
+                      disabled:
+                          _password.isEmpty || _isPasswordValid() != null)),
             ],
           ),
         ),
