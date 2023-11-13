@@ -65,7 +65,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
     _passwordController.clear();
   }
 
-  void _onObscureTap() {
+  void _toggleObscureTap() {
     _obscureText = false;
   }
 
@@ -114,7 +114,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                       ),
                       Gaps.h14,
                       GestureDetector(
-                        onTap: _onObscureTap,
+                        onTap: _toggleObscureTap,
                         child: FaIcon(
                           FontAwesomeIcons.eye,
                           color: Colors.grey.shade500,
