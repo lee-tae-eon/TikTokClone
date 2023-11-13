@@ -66,15 +66,8 @@ class _PasswordScreenState extends State<PasswordScreen> {
   }
 
   void _toggleObscureTap() {
-    if (_obscureText == true) {
-      setState(() {
-        _obscureText = false;
-      });
-    } else {
-      setState(() {
-        _obscureText = true;
-      });
-    }
+    _obscureText = !_obscureText;
+    setState(() {});
   }
 
   @override
@@ -124,7 +117,9 @@ class _PasswordScreenState extends State<PasswordScreen> {
                       GestureDetector(
                         onTap: _toggleObscureTap,
                         child: FaIcon(
-                          FontAwesomeIcons.eye,
+                          _obscureText == true
+                              ? FontAwesomeIcons.eye
+                              : FontAwesomeIcons.eyeSlash,
                           color: Colors.grey.shade500,
                           size: Sizes.size20,
                         ),
