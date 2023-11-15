@@ -134,6 +134,27 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 ),
                 cursorColor: Theme.of(context).primaryColor,
               ),
+              Gaps.v10,
+              const Text(
+                "Your password must have",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Gaps.v10,
+              Row(
+                children: [
+                  FaIcon(FontAwesomeIcons.circleCheck,
+                      size: Sizes.size20,
+                      color: _isPasswordValid()
+                          ? Colors.green
+                          : Colors.grey.shade400),
+                  Gaps.h5,
+                  const Text(
+                    '8 to 20 characters',
+                  ),
+                ],
+              ),
               Gaps.v16,
               GestureDetector(
                   onTap: _onSubmit,
