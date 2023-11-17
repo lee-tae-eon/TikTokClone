@@ -28,6 +28,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
   @override
   void initState() {
     super.initState();
+    print(date);
     _birthDayController.addListener(() {});
   }
 
@@ -96,7 +97,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
             // TextButton 이라는 widget이 존재한다
             GestureDetector(
               onTap: onNextTap,
-              child: FormButton(
+              child: const FormButton(
                 disabled: true,
               ),
             ),
