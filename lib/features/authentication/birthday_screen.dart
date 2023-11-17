@@ -14,12 +14,12 @@ class BirthDayScreen extends StatefulWidget {
 class _UsernameScreenState extends State<BirthDayScreen> {
   // * 이벤트 리스너를 추가하기 때문에 dispose를 해야한다.
   // * dispose 를 하지 않으면 memory 부족으로 crash 날 확률이 잇다.
-  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _birthDayController = TextEditingController();
   String _usernameState = "";
 
   @override
   void dispose() {
-    _usernameController.dispose();
+    _birthDayController.dispose();
     // * 모든 이벤트를 dispose하고  super 를 dispose한다
     super.dispose();
   }
@@ -27,9 +27,9 @@ class _UsernameScreenState extends State<BirthDayScreen> {
   @override
   void initState() {
     super.initState();
-    _usernameController.addListener(() {
+    _birthDayController.addListener(() {
       setState(() {
-        _usernameState = _usernameController.text;
+        _usernameState = _birthDayController.text;
       });
     });
   }
@@ -62,7 +62,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
           children: [
             Gaps.v40,
             const Text(
-              "Create username",
+              "When's your birthday",
               style: TextStyle(
                 fontSize: Sizes.size20,
                 fontWeight: FontWeight.w600,
@@ -70,7 +70,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
             ),
             Gaps.v8,
             const Text(
-              "You can always change this later.",
+              "Your birthday won't be shown publicly",
               style: TextStyle(
                 fontSize: Sizes.size16,
                 fontWeight: FontWeight.w400,
@@ -79,9 +79,9 @@ class _UsernameScreenState extends State<BirthDayScreen> {
             ),
             Gaps.v16,
             TextField(
-              controller: _usernameController,
+              controller: _birthDayController,
               decoration: InputDecoration(
-                hintText: "Username",
+                hintText: "BirthDay",
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.grey.shade400,
