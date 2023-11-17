@@ -15,7 +15,8 @@ class _UsernameScreenState extends State<BirthDayScreen> {
   // * 이벤트 리스너를 추가하기 때문에 dispose를 해야한다.
   // * dispose 를 하지 않으면 memory 부족으로 crash 날 확률이 잇다.
   final TextEditingController _birthDayController = TextEditingController();
-  String _usernameState = "";
+
+  DateTime date = DateTime.now();
 
   @override
   void dispose() {
@@ -27,17 +28,12 @@ class _UsernameScreenState extends State<BirthDayScreen> {
   @override
   void initState() {
     super.initState();
-    _birthDayController.addListener(() {
-      setState(() {
-        _usernameState = _birthDayController.text;
-      });
-    });
+    _birthDayController.addListener(() {});
   }
 
 //* StatefulWidget 의 state안에 있으면 BuilderContext를 받을 필요가 없다.
 // * 어디서든 context를 사용할 수 있다.
   void onNextTap() {
-    if (_usernameState.isEmpty) return;
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const EmailScreen(),
@@ -79,6 +75,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
             ),
             Gaps.v16,
             TextField(
+              enabled: false,
               controller: _birthDayController,
               decoration: InputDecoration(
                 hintText: "BirthDay",
@@ -100,7 +97,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
             GestureDetector(
               onTap: onNextTap,
               child: FormButton(
-                disabled: _usernameState.isEmpty,
+                disabled: true,
               ),
             ),
           ],
