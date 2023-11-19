@@ -17,7 +17,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
   // * dispose 를 하지 않으면 memory 부족으로 crash 날 확률이 잇다.
   final TextEditingController _birthDayController = TextEditingController();
 
-  DateTime date = DateTime.now();
+  DateTime initialDate = DateTime.now();
 
   @override
   void dispose() {
@@ -29,7 +29,8 @@ class _UsernameScreenState extends State<BirthDayScreen> {
   @override
   void initState() {
     super.initState();
-    _setTextFieldDate(date);
+    initialDate = DateTime(initialDate.year - 12);
+    _setTextFieldDate(initialDate);
   }
 
 //* StatefulWidget 의 state안에 있으면 BuilderContext를 받을 필요가 없다.
@@ -114,6 +115,8 @@ class _UsernameScreenState extends State<BirthDayScreen> {
         child: SizedBox(
           height: 300,
           child: CupertinoDatePicker(
+            maximumDate: initialDate,
+            initialDateTime: initialDate,
             onDateTimeChanged: _setTextFieldDate,
             mode: CupertinoDatePickerMode.date,
           ),
