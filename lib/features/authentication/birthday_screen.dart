@@ -28,8 +28,9 @@ class _UsernameScreenState extends State<BirthDayScreen> {
   @override
   void initState() {
     super.initState();
-    print(date);
-    _birthDayController.addListener(() {});
+    final textDate = date.toString().split(" ").first;
+
+    _birthDayController.value = TextEditingValue(text: textDate);
   }
 
 //* StatefulWidget 의 state안에 있으면 BuilderContext를 받을 필요가 없다.
