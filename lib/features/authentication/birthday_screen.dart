@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
@@ -103,6 +104,11 @@ class _UsernameScreenState extends State<BirthDayScreen> {
               ),
             ),
           ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: CupertinoDatePicker(
+          onDateTimeChanged: (DateTime value) {},
         ),
       ),
     );
