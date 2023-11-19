@@ -29,9 +29,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
   @override
   void initState() {
     super.initState();
-    final textDate = date.toString().split(" ").first;
-
-    _birthDayController.value = TextEditingValue(text: textDate);
+    _setTextFieldDate(date);
   }
 
 //* StatefulWidget 의 state안에 있으면 BuilderContext를 받을 필요가 없다.
@@ -42,6 +40,12 @@ class _UsernameScreenState extends State<BirthDayScreen> {
         builder: (context) => const EmailScreen(),
       ),
     );
+  }
+
+  void _setTextFieldDate(DateTime date) {
+    final textDate = date.toString().split(" ").first;
+
+    _birthDayController.value = TextEditingValue(text: textDate);
   }
 
   @override
@@ -107,8 +111,12 @@ class _UsernameScreenState extends State<BirthDayScreen> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        child: CupertinoDatePicker(
-          onDateTimeChanged: (DateTime value) {},
+        child: SizedBox(
+          height: 300,
+          child: CupertinoDatePicker(
+            onDateTimeChanged: _setTextFieldDate,
+            mode: CupertinoDatePickerMode.date,
+          ),
         ),
       ),
     );
