@@ -105,7 +105,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
             GestureDetector(
               onTap: onNextTap,
               child: const FormButton(
-                disabled: true,
+                disabled: false,
               ),
             ),
           ],
