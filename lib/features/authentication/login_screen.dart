@@ -4,19 +4,22 @@ import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
 import 'package:ticktok_clone/features/authentication/login_form_screen.dart';
 import 'package:ticktok_clone/features/authentication/widgets/auth_button.dart';
-import 'package:ticktok_clone/features/authentication/sign_up_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   void _onSignUpTap(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const SignUpScreen()));
+    // Navigator.of(context)
+    //     .push(MaterialPageRoute(builder: (context) => const SignUpScreen()));
+    Navigator.of(context).pop();
   }
 
   void _onEmailLoginTap(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const LoginFormScreen()));
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const LoginFormScreen(),
+      ),
+    );
   }
 
   @override
