@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
-import 'package:ticktok_clone/features/authentication/username_screen.dart';
+import 'package:ticktok_clone/features/authentication/login_form_screen.dart';
 import 'package:ticktok_clone/features/authentication/widgets/auth_button.dart';
 import 'package:ticktok_clone/features/authentication/sign_up_screen.dart';
 
@@ -14,14 +14,9 @@ class LoginScreen extends StatelessWidget {
         .push(MaterialPageRoute(builder: (context) => const SignUpScreen()));
   }
 
-  void _linkToEmailScreen(BuildContext context) {
+  void _onEmailLoginTap(BuildContext context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const UsernameScreen()));
-  }
-
-  void _linkToUserNamScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const UsernameScreen()));
+        .push(MaterialPageRoute(builder: (context) => const LoginFormScreen()));
   }
 
   @override
@@ -57,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                   FontAwesomeIcons.user,
                 ),
                 text: "Use email & password",
-                linkToFunction: _linkToEmailScreen,
+                linkToFunction: _onEmailLoginTap,
               ),
               Gaps.v16,
               AuthButton(
@@ -65,7 +60,7 @@ class LoginScreen extends StatelessWidget {
                   FontAwesomeIcons.apple,
                 ),
                 text: "Continue with Apple",
-                linkToFunction: _linkToUserNamScreen,
+                linkToFunction: _onEmailLoginTap,
               ),
             ],
           ),
