@@ -24,9 +24,18 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
         child: Form(
           child: Column(
             children: [
-              TextFormField(),
+              Gaps.v28,
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: "Email",
+                ),
+              ),
               Gaps.v16,
-              TextFormField(),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: "Password",
+                ),
+              ),
               Gaps.v28,
               const FormButton(
                 disabled: false,
