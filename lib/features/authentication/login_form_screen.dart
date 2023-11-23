@@ -28,7 +28,10 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
               Gaps.v16,
               TextFormField(),
               Gaps.v28,
-              const FormButton(disabled: false)
+              const FormButton(
+                disabled: false,
+                ConfrimText: "Log In",
+              )
             ],
           ),
         ),
