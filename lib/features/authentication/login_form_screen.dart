@@ -31,12 +31,18 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
                 decoration: const InputDecoration(
                   hintText: "Email",
                 ),
+                validator: (value) {
+                  return "i dont like your email";
+                },
               ),
               Gaps.v16,
               TextFormField(
                 decoration: const InputDecoration(
                   hintText: "Password",
                 ),
+                validator: (value) {
+                  return "wrong password";
+                },
               ),
               Gaps.v28,
               const FormButton(
