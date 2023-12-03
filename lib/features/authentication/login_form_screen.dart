@@ -11,6 +11,7 @@ class LoginFormScreen extends StatefulWidget {
 }
 
 class _LoginFormScreenState extends State<LoginFormScreen> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +23,7 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
           horizontal: Sizes.size36,
         ),
         child: Form(
+          key: _formKey,
           child: Column(
             children: [
               Gaps.v28,
