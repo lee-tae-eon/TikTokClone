@@ -37,7 +37,7 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
                   hintText: "Email",
                 ),
                 validator: (value) {
-                  return "i dont like your email";
+                  return "Check your email please";
                 },
               ),
               Gaps.v16,
