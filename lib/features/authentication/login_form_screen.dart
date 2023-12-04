@@ -11,10 +11,18 @@ class LoginFormScreen extends StatefulWidget {
 }
 
 class _LoginFormScreenState extends State<LoginFormScreen> {
+  // * form state init
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   void _onSubmitTap() {
-    _formKey.currentState?.validate();
+    if (_formKey.currentState != null) {
+      // * formstate를 이용해서 모든 텍스트 필드의 validate 를 체크
+      // * 하나라도 false이면 error 반환
+      if (_formKey.currentState!.validate()) {
+        // *save: 모든 텍스트 입력에 onSaved callback을 실행하게함
+        _formKey.currentState!.save();
+      }
+    }
   }
 
   @override
