@@ -14,6 +14,8 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
   // * form state init
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  Map<String, String> formData = {};
+
   void _onSubmitTap() {
     if (_formKey.currentState != null) {
       // * formstate를 이용해서 모든 텍스트 필드의 validate 를 체크
@@ -47,7 +49,11 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
                 validator: (value) {
                   return null;
                 },
-                onSaved: (newValue) => print(newValue),
+                onSaved: (newValue) {
+                  if (newValue != null) {
+                    formData["email"] = newValue;
+                  }
+                },
               ),
               Gaps.v16,
               TextFormField(
@@ -57,7 +63,11 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
                 validator: (value) {
                   return null;
                 },
-                onSaved: (newValue) => print(newValue),
+                onSaved: (newValue) {
+                  if (newValue != null) {
+                    formData["password"] = newValue;
+                  }
+                },
               ),
               Gaps.v28,
               GestureDetector(
