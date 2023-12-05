@@ -45,8 +45,9 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
                   hintText: "Email",
                 ),
                 validator: (value) {
-                  return "Check your email please";
+                  return null;
                 },
+                onSaved: (newValue) => print(newValue),
               ),
               Gaps.v16,
               TextFormField(
@@ -54,8 +55,9 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
                   hintText: "Password",
                 ),
                 validator: (value) {
-                  return "wrong password";
+                  return null;
                 },
+                onSaved: (newValue) => print(newValue),
               ),
               Gaps.v28,
               GestureDetector(
