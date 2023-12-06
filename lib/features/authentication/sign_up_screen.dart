@@ -28,6 +28,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //* Safe Area 유저가 볼 수 있는 구역에 컨텐츠를 보여주는 위젯 - 시계나 상태창 같은 위치에는 오지 않음
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
