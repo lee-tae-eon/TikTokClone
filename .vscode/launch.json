@@ -16,7 +16,7 @@
       "deviceId": "emulator-5554"
     },
     {
-      "name": "iPhone",
+      "name": "IOS",
       "request": "launch",
       "type": "dart",
       "deviceId": "AD057D06-E3FD-4465-A570-72197C60D927"
@@ -37,7 +37,7 @@
   "compounds": [
     {
       "name": "All devices",
-      "configurations": ["Android", "iPhone"]
+      "configurations": ["Android", "IOS"]
     }
   ]
 }
