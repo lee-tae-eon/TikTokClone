@@ -23,7 +23,6 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
       if (_formKey.currentState!.validate()) {
         // *save: 모든 텍스트 입력에 onSaved callback을 실행하게함
         _formKey.currentState!.save();
-        print(formData.values);
       }
     }
   }
@@ -95,7 +94,7 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
                 onTap: _onSubmitTap,
                 child: const FormButton(
                   disabled: false,
-                  ConfrimText: "Log In",
+                  confirmText: "Log In",
                 ),
               )
             ],

@@ -5,12 +5,12 @@ class FormButton extends StatelessWidget {
   const FormButton({
     super.key,
     required this.disabled,
-    this.ConfrimText = "Next",
+    this.confirmText = "Next",
   });
 
   final bool disabled;
 
-  final String ConfrimText;
+  final String confirmText;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class FormButton extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
           child: Text(
-            ConfrimText,
+            confirmText,
             textAlign: TextAlign.center,
           ),
         ),
