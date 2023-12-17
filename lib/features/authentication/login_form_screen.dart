@@ -57,6 +57,9 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
                   ),
                 ),
                 validator: (value) {
+                  if (value != null && value.isEmpty) {
+                    return "Please write your email";
+                  }
                   return null;
                 },
                 onSaved: (newValue) {
@@ -81,6 +84,9 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
                   ),
                 ),
                 validator: (value) {
+                  if (value != null && value.isEmpty) {
+                    return "Please write your password";
+                  }
                   return null;
                 },
                 onSaved: (newValue) {

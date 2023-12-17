@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
-import 'package:ticktok_clone/features/authentication/email_screen.dart';
+
 import 'package:ticktok_clone/features/authentication/widgets/form_button.dart';
+import 'package:ticktok_clone/features/onboarding/interests_screen.dart';
 
 class BirthDayScreen extends StatefulWidget {
   const BirthDayScreen({super.key});
@@ -38,7 +39,7 @@ class _UsernameScreenState extends State<BirthDayScreen> {
   void onNextTap() {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const EmailScreen(),
+        builder: (context) => const InterestsScreen(),
       ),
     );
   }
