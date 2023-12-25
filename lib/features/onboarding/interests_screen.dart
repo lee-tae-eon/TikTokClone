@@ -80,9 +80,10 @@ class InterestsScreen extends StatelessWidget {
               Gaps.v64,
               // * Wrap widget 은 children을 가로로 배치 한줄에 다 들어가지 않으면 flex-wrap처럼 작동한다.
               Wrap(
-                runSpacing: 20,
-                spacing: 20,
+                runSpacing: 15,
+                spacing: 15,
                 children: [
+                  // * list 가 많은 경우 ListView Builder를 사용하자
                   for (var interest in interests)
                     Container(
                       padding: const EdgeInsets.symmetric(
@@ -90,12 +91,9 @@ class InterestsScreen extends StatelessWidget {
                         horizontal: Sizes.size12,
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(
-                          0.05,
-                        ),
-                        border: Border.all(
-                          color: Colors.black38,
-                        ),
+                        color: Colors.white,
+                        border:
+                            Border.all(color: Colors.black.withOpacity(0.1)),
                         borderRadius: BorderRadius.circular(
                           Sizes.size32,
                         ),
