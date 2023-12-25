@@ -77,30 +77,35 @@ class InterestsScreen extends StatelessWidget {
               ),
             ),
             Gaps.v64,
-            for (var interest in interests)
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: Sizes.size12,
-                  horizontal: Sizes.size12,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(
-                    Sizes.size32,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
-                      blurRadius: 5,
-                      spreadRadius: 5,
-                    )
-                  ],
-                ),
-                child: Text(interest,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    )),
-              )
+            // * Wrap widget 은 children을 가로로 배치 한줄에 다 들어가지 않으면 flex-wrap처럼 작동한다.
+            Wrap(
+              children: [
+                for (var interest in interests)
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: Sizes.size12,
+                      horizontal: Sizes.size12,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(
+                        Sizes.size32,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 5,
+                          spreadRadius: 5,
+                        )
+                      ],
+                    ),
+                    child: Text(interest,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        )),
+                  )
+              ],
+            )
           ],
         ),
       ),
