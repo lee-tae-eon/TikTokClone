@@ -80,14 +80,26 @@ class InterestsScreen extends StatelessWidget {
             for (var interest in interests)
               Container(
                 padding: const EdgeInsets.symmetric(
-                  vertical: Sizes.size24,
+                  vertical: Sizes.size12,
+                  horizontal: Sizes.size12,
                 ),
                 decoration: BoxDecoration(
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(
                     Sizes.size32,
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.05),
+                      blurRadius: 5,
+                      spreadRadius: 5,
+                    )
+                  ],
                 ),
-                child: Text(interest),
+                child: Text(interest,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    )),
               )
           ],
         ),
