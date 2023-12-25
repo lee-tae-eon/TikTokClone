@@ -116,6 +116,26 @@ class InterestsScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+          child: Padding(
+        padding: const EdgeInsets.only(
+          bottom: Sizes.size80,
+          top: Sizes.size12,
+          left: Sizes.size24,
+          right: Sizes.size24,
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor,
+          ),
+          child: const Text(
+            "Next",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ),
+      )),
     );
   }
 }
