@@ -60,9 +60,9 @@ class InterestsScreen extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Gaps.v32,
-            Text(
+            const Text(
               "Choose your interests",
               style: TextStyle(
                 fontSize: Sizes.size40,
@@ -70,12 +70,25 @@ class InterestsScreen extends StatelessWidget {
               ),
             ),
             Gaps.v20,
-            Text(
+            const Text(
               "Get better video recommendations",
               style: TextStyle(
                 fontSize: Sizes.size20,
               ),
             ),
+            Gaps.v64,
+            for (var interest in interests)
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: Sizes.size24,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    Sizes.size32,
+                  ),
+                ),
+                child: Text(interest),
+              )
           ],
         ),
       ),
