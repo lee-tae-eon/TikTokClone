@@ -64,6 +64,7 @@ class _InterestsScreenState extends State<InterestsScreen> {
       body: Scrollbar(
         controller: _scrollController,
         child: SingleChildScrollView(
+          controller: _scrollController,
           child: Padding(
             padding: const EdgeInsets.only(
               left: Sizes.size24,
