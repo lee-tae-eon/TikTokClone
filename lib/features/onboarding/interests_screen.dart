@@ -56,10 +56,15 @@ class _InterestsScreenState extends State<InterestsScreen> {
   @override
   void initState() {
     super.initState();
+    _scrollController.addListener(() {
+      // * offset 은 scroll이 얼마나 진행되었는지 값
+      print(_scrollController.offset);
+    });
   }
 
   @override
   void dispose() {
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -67,8 +72,14 @@ class _InterestsScreenState extends State<InterestsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Choose your interests",
+        title: const AnimatedOpacity(
+          opacity: 0,
+          duration: Duration(
+            milliseconds: 300,
+          ),
+          child: Text(
+            "Choose your interests",
+          ),
         ),
       ),
       body: Scrollbar(
