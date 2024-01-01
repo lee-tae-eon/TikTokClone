@@ -53,13 +53,24 @@ class InterestsScreen extends StatefulWidget {
 class _InterestsScreenState extends State<InterestsScreen> {
   final ScrollController _scrollController = ScrollController();
 
+  bool _showTitle = false;
+
+  void _onScroll() {
+    if (_scrollController.offset > 110) {
+      setState(() {
+        _showTitle = true;
+      });
+    } else {
+      setState(() {
+        _showTitle = false;
+      });
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(() {
-      // * offset 은 scroll이 얼마나 진행되었는지 값
-      print(_scrollController.offset);
-    });
+    _scrollController.addListener(_onScroll);
   }
 
   @override
@@ -72,12 +83,12 @@ class _InterestsScreenState extends State<InterestsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const AnimatedOpacity(
-          opacity: 0,
-          duration: Duration(
+        title: AnimatedOpacity(
+          opacity: _showTitle ? 1 : 0,
+          duration: const Duration(
             milliseconds: 300,
           ),
-          child: Text(
+          child: const Text(
             "Choose your interests",
           ),
         ),
