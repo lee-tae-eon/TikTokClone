@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
+import 'package:ticktok_clone/features/onboarding/widgets/interest_button.dart';
 
 const interests = [
   "Daily Life",
@@ -57,6 +58,7 @@ class _InterestsScreenState extends State<InterestsScreen> {
 
   void _onScroll() {
     if (_scrollController.offset > 110) {
+      if (_showTitle) return;
       setState(() {
         _showTitle = true;
       });
@@ -129,31 +131,7 @@ class _InterestsScreenState extends State<InterestsScreen> {
                   children: [
                     // * list 가 많은 경우 ListView Builder를 사용하자
                     for (var interest in interests)
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: Sizes.size12,
-                          horizontal: Sizes.size12,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border:
-                              Border.all(color: Colors.black.withOpacity(0.1)),
-                          borderRadius: BorderRadius.circular(
-                            Sizes.size32,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
-                              blurRadius: 5,
-                              spreadRadius: 5,
-                            )
-                          ],
-                        ),
-                        child: Text(interest,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                            )),
-                      )
+                      InterestButton(interest: interest)
                   ],
                 )
               ],
@@ -190,4 +168,5 @@ class _InterestsScreenState extends State<InterestsScreen> {
     );
   }
 }
+
 // 푸쉬 테스트
