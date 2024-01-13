@@ -26,29 +26,37 @@ class _InterestButtonState extends State<InterestButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          vertical: Sizes.size12,
-          horizontal: Sizes.size12,
+      child: AnimatedContainer(
+        duration: const Duration(
+          milliseconds: 300,
         ),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: Colors.black.withOpacity(0.1)),
-          borderRadius: BorderRadius.circular(
-            Sizes.size32,
+        child: Container(
+          padding: const EdgeInsets.symmetric(
+            vertical: Sizes.size12,
+            horizontal: Sizes.size12,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 5,
-              spreadRadius: 5,
-            )
-          ],
-        ),
-        child: Text(widget.interest,
-            style: const TextStyle(
+          decoration: BoxDecoration(
+            color: _isSelected ? Theme.of(context).primaryColor : Colors.white,
+            border: Border.all(color: Colors.black.withOpacity(0.1)),
+            borderRadius: BorderRadius.circular(
+              Sizes.size32,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.05),
+                blurRadius: 5,
+                spreadRadius: 5,
+              )
+            ],
+          ),
+          child: Text(
+            widget.interest,
+            style: TextStyle(
               fontWeight: FontWeight.bold,
-            )),
+              color: _isSelected ? Colors.white : Colors.black87,
+            ),
+          ),
+        ),
       ),
     );
   }
