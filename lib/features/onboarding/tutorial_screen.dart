@@ -102,9 +102,13 @@ class _TutorialScreenState extends State<TutorialScreen> {
                 vertical: Sizes.size48,
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   // * TabBarView & TabPageSelector를 DefaultTabController안에 위치 시키면 자동으로 페이지를 카운팅한다.
-                  TabPageSelector(),
+                  TabPageSelector(
+                    color: Colors.white,
+                    selectedColor: Colors.black38,
+                  ),
                 ],
               )),
         ),
