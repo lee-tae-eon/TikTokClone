@@ -96,6 +96,18 @@ class _TutorialScreenState extends State<TutorialScreen> {
             ],
           ),
         ),
+        bottomNavigationBar: BottomAppBar(
+          child: Container(
+              padding: const EdgeInsets.symmetric(
+                vertical: Sizes.size48,
+              ),
+              child: Row(
+                children: const [
+                  // * TabBarView & TabPageSelector를 DefaultTabController안에 위치 시키면 자동으로 페이지를 카운팅한다.
+                  TabPageSelector(),
+                ],
+              )),
+        ),
       ),
     );
   }
