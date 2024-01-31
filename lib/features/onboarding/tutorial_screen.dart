@@ -11,7 +11,11 @@ class TutorialScreen extends StatefulWidget {
 
 class _TutorialScreenState extends State<TutorialScreen> {
   void _onPanUpdate(DragUpdateDetails details) {
-    print(details);
+    if (details.delta.dx > 0) {
+      // to the right
+    } else {
+// to the left
+    }
   }
 
   @override
