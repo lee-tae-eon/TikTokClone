@@ -14,42 +14,52 @@ class _TutorialScreenState extends State<TutorialScreen> {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Scaffold(
-        body: AnimatedCrossFade(
-          firstChild: Column(
-            children: const [
-              Text(
-                "Enjoy the ride",
-                style: TextStyle(
-                  fontSize: Sizes.size40,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Gaps.v16,
-              Text(
-                "Videos are personalized for you based on what you watch, like, and share.",
-                style: TextStyle(
-                  fontSize: Sizes.size20,
-                ),
-              ),
-            ],
+        body: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: Sizes.size24,
           ),
-          secondChild: Column(
-            children: const [
-              Text(
-                "Follow the rules",
-                style: TextStyle(
-                  fontSize: Sizes.size40,
-                  fontWeight: FontWeight.bold,
-                ),
+          child: SafeArea(
+            child: AnimatedCrossFade(
+              crossFadeState: CrossFadeState.showFirst,
+              duration: const Duration(milliseconds: 300),
+              firstChild: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    "Watch cool videos!",
+                    style: TextStyle(
+                      fontSize: Sizes.size40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Gaps.v16,
+                  Text(
+                    "Videos are personalized for you based on what you watch, like, and share.",
+                    style: TextStyle(
+                      fontSize: Sizes.size20,
+                    ),
+                  ),
+                ],
               ),
-              Gaps.v16,
-              Text(
-                "Videos are personalized for you based on what you watch, like, and share.",
-                style: TextStyle(
-                  fontSize: Sizes.size20,
-                ),
+              secondChild: Column(
+                children: const [
+                  Text(
+                    "Follow the rules",
+                    style: TextStyle(
+                      fontSize: Sizes.size40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Gaps.v16,
+                  Text(
+                    "Videos are personalized for you based on what you watch, like, and share.",
+                    style: TextStyle(
+                      fontSize: Sizes.size20,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
