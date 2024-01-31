@@ -10,9 +10,14 @@ class TutorialScreen extends StatefulWidget {
 }
 
 class _TutorialScreenState extends State<TutorialScreen> {
+  void _onPanUpdate(DragUpdateDetails details) {
+    print(details);
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onPanUpdate: _onPanUpdate,
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(
@@ -25,6 +30,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
               firstChild: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
+                  Gaps.v80,
                   Text(
                     "Watch cool videos!",
                     style: TextStyle(
@@ -43,6 +49,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
               ),
               secondChild: Column(
                 children: const [
+                  Gaps.v80,
                   Text(
                     "Follow the rules",
                     style: TextStyle(
