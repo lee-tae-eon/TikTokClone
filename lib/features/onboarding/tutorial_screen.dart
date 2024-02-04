@@ -89,7 +89,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   ),
                   Gaps.v16,
                   Text(
-                    "Videos are personalized for you based on what you watch, like, and share.",
+                    "Take care of one another. please!",
                     style: TextStyle(
                       fontSize: Sizes.size20,
                     ),
