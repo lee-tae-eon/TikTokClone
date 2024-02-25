@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticktok_clone/constants/gaps.dart';
 import 'package:ticktok_clone/constants/sizes.dart';
@@ -96,6 +97,19 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   ),
                 ],
               ),
+            ),
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: Sizes.size48,
+              horizontal: Sizes.size24,
+            ),
+            child: CupertinoButton(
+              onPressed: () {},
+              color: Theme.of(context).primaryColor,
+              child: const Text("Enter the app !"),
             ),
           ),
         ),
