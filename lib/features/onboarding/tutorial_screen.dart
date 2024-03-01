@@ -58,9 +58,9 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   ? CrossFadeState.showSecond
                   : CrossFadeState.showFirst,
               duration: const Duration(milliseconds: 300),
-              firstChild: Column(
+              firstChild: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Gaps.v80,
                   Text(
                     "Watch cool videos!",
@@ -78,8 +78,8 @@ class _TutorialScreenState extends State<TutorialScreen> {
                   ),
                 ],
               ),
-              secondChild: Column(
-                children: const [
+              secondChild: const Column(
+                children: [
                   Gaps.v80,
                   Text(
                     "Follow the rules",
