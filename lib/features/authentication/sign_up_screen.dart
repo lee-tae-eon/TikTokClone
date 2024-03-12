@@ -74,8 +74,8 @@ class SignUpScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.grey.shade50,
-        elevation: 3,
+        color: Colors.white,
+        elevation: 1,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             vertical: Sizes.size32,
@@ -96,7 +96,7 @@ class SignUpScreen extends StatelessWidget {
                 child: Text(
                   "Log in",
                   style: TextStyle(
-                    color: Theme.of(context).primaryColor,
+                    color: Colors.red.shade400,
                     fontWeight: FontWeight.w600,
                     fontSize: Sizes.size16,
                   ),
