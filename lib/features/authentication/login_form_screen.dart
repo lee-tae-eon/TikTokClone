@@ -24,10 +24,15 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
       if (_formKey.currentState!.validate()) {
         // *save: 모든 텍스트 입력에 onSaved callback을 실행하게함
         _formKey.currentState!.save();
-        Navigator.of(context).push(
+
+        // * 이전화면으로 돌아가려면 push를  그걸 원하지 않으면 pushAndRemoveUntil을 사용한다
+        Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
             builder: (context) => const InterestsScreen(),
           ),
+          (route) {
+            return false;
+          },
         );
       }
     }
