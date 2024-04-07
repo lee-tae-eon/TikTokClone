@@ -36,18 +36,21 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     return Scaffold(
       body: screens[_selectedIndex],
       bottomNavigationBar: NavigationBar(
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
         selectedIndex: _selectedIndex,
         onDestinationSelected: _onTap,
         destinations: const [
           NavigationDestination(
             icon: FaIcon(
               FontAwesomeIcons.house,
+              color: Colors.cyan,
             ),
             label: "home",
           ),
           NavigationDestination(
             icon: FaIcon(
               FontAwesomeIcons.magnifyingGlass,
+              color: Colors.cyan,
             ),
             label: "search",
           )
