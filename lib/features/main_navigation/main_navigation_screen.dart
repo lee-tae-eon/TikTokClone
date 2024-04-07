@@ -35,50 +35,68 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screens[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.shifting,
-        currentIndex: _selectedIndex,
-        onTap: _onTap,
-        selectedItemColor: Theme.of(context).primaryColor,
-        unselectedItemColor: Colors.blueGrey,
-        items: const [
-          BottomNavigationBarItem(
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _selectedIndex,
+        onDestinationSelected: _onTap,
+        destinations: const [
+          NavigationDestination(
             icon: FaIcon(
               FontAwesomeIcons.house,
             ),
-            label: "Home",
-            tooltip: "what are you",
+            label: "home",
           ),
-          BottomNavigationBarItem(
+          NavigationDestination(
             icon: FaIcon(
               FontAwesomeIcons.magnifyingGlass,
             ),
             label: "search",
-            tooltip: "what are you",
-          ),
-          // BottomNavigationBarItem(
-          //   icon: FaIcon(
-          //     FontAwesomeIcons.magnifyingGlass,
-          //   ),
-          //   label: "search",
-          //   tooltip: "what are you",
-          // ),
-          // BottomNavigationBarItem(
-          //   icon: FaIcon(
-          //     FontAwesomeIcons.magnifyingGlass,
-          //   ),
-          //   label: "search",
-          //   tooltip: "what are you",
-          // ),
-          // BottomNavigationBarItem(
-          //   icon: FaIcon(
-          //     FontAwesomeIcons.magnifyingGlass,
-          //   ),
-          //   label: "search",
-          //   tooltip: "what are you",
-          // ),
+          )
         ],
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   type: BottomNavigationBarType.shifting,
+      //   currentIndex: _selectedIndex,
+      //   onTap: _onTap,
+      //   selectedItemColor: Theme.of(context).primaryColor,
+      //   unselectedItemColor: Colors.blueGrey,
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: FaIcon(
+      //         FontAwesomeIcons.house,
+      //       ),
+      //       label: "Home",
+      //       tooltip: "what are you",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: FaIcon(
+      //         FontAwesomeIcons.magnifyingGlass,
+      //       ),
+      //       label: "search",
+      //       tooltip: "what are you",
+      //     ),
+      //     // BottomNavigationBarItem(
+      //     //   icon: FaIcon(
+      //     //     FontAwesomeIcons.magnifyingGlass,
+      //     //   ),
+      //     //   label: "search",
+      //     //   tooltip: "what are you",
+      //     // ),
+      //     // BottomNavigationBarItem(
+      //     //   icon: FaIcon(
+      //     //     FontAwesomeIcons.magnifyingGlass,
+      //     //   ),
+      //     //   label: "search",
+      //     //   tooltip: "what are you",
+      //     // ),
+      //     // BottomNavigationBarItem(
+      //     //   icon: FaIcon(
+      //     //     FontAwesomeIcons.magnifyingGlass,
+      //     //   ),
+      //     //   label: "search",
+      //     //   tooltip: "what are you",
+      //     // ),
+      //   ],
+      // ),
     );
   }
 }
